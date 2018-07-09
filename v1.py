@@ -16,7 +16,7 @@ def crawl(url, b_url, file_name):
     tag = soup.new_tag("base", href=b_url);
 
     soup.head.link.insert_before(tag);
-    with open(file_name, 'wb') as file:
+    with open("data/"+file_name, 'wb') as file:
         file.write(soup.prettify("ISO 8859-1"));
 
     
