@@ -11,7 +11,7 @@ b_sbahn = "http://www.s-bahn-berlin.de/"
 b_bvg = "http://www.bvg.de/"
 
 def crawl(url, b_url, file_name):
-    soup = bs4.BeautifulSoup(urllib.request.urlopen(url), "lxml");
+    soup = bs4.BeautifulSoup(urllib.request.urlopen(url), "html.parser");
     #Make the tags production ready
     tag = soup.new_tag("base", href=b_url);
 
@@ -30,4 +30,4 @@ while (run):
         crawl(bvg, b_bvg, datetime.datetime.strftime(datetime.datetime.now(), "%Y-%m-%d.%H-%M-%S.%z")+"bvg.html");
         time = datetime.datetime.now();
         print (str(time)+": Pages crawlt");
-    #Do some input checks to cancel the loop
+    #Do some input checks to cancel the loop and not only with CMD+C

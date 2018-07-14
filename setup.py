@@ -9,7 +9,6 @@ setup(name='pt-crawler',
       license='Unlicense',
       packages=[''],
       install_requires=[
-          'lxml',
           'beautifulsoup4'
       ],
       zip_safe=False)
